@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabela de Nomes e Idades</title>
+  <title>Tabela</title>
   <style>
     body {
       display: flex;
@@ -31,28 +31,21 @@
   </style>
 </head>
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Idade</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>João</td>
-        <td>25</td>
-      </tr>
-      <tr>
-        <td>Maria</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td>Rafael</td>
-        <td>40</td>
-      </tr>
-    </tbody>
-  </table>
-
+    <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% alunos.forEach(aluno => { %>
+            <tr>
+              <td><%= aluno.nome %></td>
+              <td><%= aluno.idade %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
 </body>
 </html>
