@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        const toggleBtn = document.getElementById("toggle-btn");
+      
+        toggleBtn.addEventListener("click", function () {
+          if (loginForm.style.display === "none") {
+            // Mostra o formulário de login e esconde o de cadastro
+            loginForm.style.display = "block";
+            signupForm.style.display = "none";
+            toggleBtn.textContent = "Não tem uma conta? Cadastrar";
+          } else {
+            // Mostra o formulário de cadastro e esconde o de login
+            loginForm.style.display = "none";
+            signupForm.style.display = "block";
+            toggleBtn.textContent = "Já tem uma conta? Entrar";
+          }
+        });
+      
+        loginForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Adicione a lógica de autenticação aqui
+          console.log("Tentativa de login");
+        });
+      
+        signupForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Adicione a lógica de criação de conta aqui
+          console.log("Tentativa de cadastro");
+        });
+      });
+</script>
+</head>
+
+<body>
+<div class="login-container">
+<form id="login-form">
+    <h2>Login</h2>
+    <label for="username">Usuário:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Entrar</button>
+</form>
+
+<form id="signup-form" style="display: none;">
+    <h2>Cadastrar</h2>
+    <label for="new-username">Novo Usuário:</label>
+    <input type="text" id="new-username" name="new-username" required>
+
+    <label for="new-password">Nova Senha:</label>
+    <input type="password" id="new-password" name="new-password" required>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<button id="toggle-btn">Não tem uma conta? Cadastrar</button>
+</div>
+
+</body>
+</html>
